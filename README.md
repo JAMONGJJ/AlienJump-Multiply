@@ -8,32 +8,32 @@
 ###### 1. 클라이언트 코드 및 바인드 할 버텍스 셰이더, 프래그먼트 셰이더들을 C++, GLSL로 작성
 ###### 2. 스테이지가 하나씩 올라갈 때마다 렌더링되는 이미지들이 2배로 증가
 
-  		modelArray[0][0] = buildMatrix(vec3(0.0, 0.0, 0.0), 0.0, vec3(1.0, 1.0, 1.0));
+  	modelArray[0][0] = buildMatrix(vec3(0.0, 0.0, 0.0), 0.0, vec3(1.0, 1.0, 1.0));
 
-		modelArray[1][0] = buildMatrix(vec3(0.0, 0.5, 0.0), 0.0, vec3(1.0, 0.5, 1.0));
-		modelArray[1][1] = buildMatrix(vec3(0.0, -0.5, 0.0), 0.0, vec3(1.0, 0.5, 1.0));
+	modelArray[1][0] = buildMatrix(vec3(0.0, 0.5, 0.0), 0.0, vec3(1.0, 0.5, 1.0));
+	modelArray[1][1] = buildMatrix(vec3(0.0, -0.5, 0.0), 0.0, vec3(1.0, 0.5, 1.0));
 
-		modelArray[2][0] = buildMatrix(vec3(-0.5, 0.5, 0.0), 0.0, vec3(0.5, 0.5, 1.0));
-		modelArray[2][1] = buildMatrix(vec3(0.5, 0.5, 0.0), 0.0, vec3(0.5, 0.5, 1.0));
-		modelArray[2][2] = buildMatrix(vec3(-0.5, -0.5, 0.0), 0.0, vec3(0.5, 0.5, 1.0));
-		modelArray[2][3] = buildMatrix(vec3(0.5, -0.5, 0.0), 0.0, vec3(0.5, 0.5, 1.0));
+	modelArray[2][0] = buildMatrix(vec3(-0.5, 0.5, 0.0), 0.0, vec3(0.5, 0.5, 1.0));
+	modelArray[2][1] = buildMatrix(vec3(0.5, 0.5, 0.0), 0.0, vec3(0.5, 0.5, 1.0));
+	modelArray[2][2] = buildMatrix(vec3(-0.5, -0.5, 0.0), 0.0, vec3(0.5, 0.5, 1.0));
+	modelArray[2][3] = buildMatrix(vec3(0.5, -0.5, 0.0), 0.0, vec3(0.5, 0.5, 1.0));
 
-		modelArray[3][0] = buildMatrix(vec3(-0.5, 0.75, 0.0), 0.0, vec3(0.5, 0.25, 1.0));
-		modelArray[3][1] = buildMatrix(vec3(0.5, 0.75, 0.0), 0.0, vec3(0.5, 0.25, 1.0));
-		modelArray[3][2] = buildMatrix(vec3(-0.5, 0.25, 0.0), 0.0, vec3(0.5, 0.25, 1.0));
-		modelArray[3][3] = buildMatrix(vec3(0.5, 0.25, 0.0), 0.0, vec3(0.5, 0.25, 1.0));
-		modelArray[3][4] = buildMatrix(vec3(-0.5, -0.25, 0.0), 0.0, vec3(0.5, 0.25, 1.0));
-		modelArray[3][5] = buildMatrix(vec3(0.5, -0.25, 0.0), 0.0, vec3(0.5, 0.25, 1.0));
-		modelArray[3][6] = buildMatrix(vec3(-0.5, -0.75, 0.0), 0.0, vec3(0.5, 0.25, 1.0));
-		modelArray[3][7] = buildMatrix(vec3(0.5, -0.75, 0.0), 0.0, vec3(0.5, 0.25, 1.0));
-		...
+	modelArray[3][0] = buildMatrix(vec3(-0.5, 0.75, 0.0), 0.0, vec3(0.5, 0.25, 1.0));
+	modelArray[3][1] = buildMatrix(vec3(0.5, 0.75, 0.0), 0.0, vec3(0.5, 0.25, 1.0));
+	modelArray[3][2] = buildMatrix(vec3(-0.5, 0.25, 0.0), 0.0, vec3(0.5, 0.25, 1.0));
+	modelArray[3][3] = buildMatrix(vec3(0.5, 0.25, 0.0), 0.0, vec3(0.5, 0.25, 1.0));
+	modelArray[3][4] = buildMatrix(vec3(-0.5, -0.25, 0.0), 0.0, vec3(0.5, 0.25, 1.0));
+	modelArray[3][5] = buildMatrix(vec3(0.5, -0.25, 0.0), 0.0, vec3(0.5, 0.25, 1.0));
+	modelArray[3][6] = buildMatrix(vec3(-0.5, -0.75, 0.0), 0.0, vec3(0.5, 0.25, 1.0));
+	modelArray[3][7] = buildMatrix(vec3(0.5, -0.75, 0.0), 0.0, vec3(0.5, 0.25, 1.0));
+	...
 		
-		obstacleShader.setUniformMatrix4f("model", modelArray[stage - 1][i]);
-		repeatingShader.setUniformMatrix4f("model", modelArray[stage - 1][i]);
+	obstacleShader.setUniformMatrix4f("model", modelArray[stage - 1][i]);
+	repeatingShader.setUniformMatrix4f("model", modelArray[stage - 1][i]);
 ###### 3. 스테이지에 따라 셰이더로 4차원 행렬값을 전달해 화면에 이미지가 렌더링 될 크기 및 위치를 변경
 
-		if ((abs(posA.x - posB.x) < (wA + wB) * hardness) && (abs(posA.y - posB.y) < (hA + hB) * hardness))
-			return true;
+	if ((abs(posA.x - posB.x) < (wA + wB) * hardness) && (abs(posA.y - posB.y) < (hA + hB) * hardness))
+		return true;
 ###### 4. 충돌검사를 진행할 때 hardness 변수를 곱해 충돌검사 난이도 조절
 	
 	backgroundMove += ofGetLastFrameTime();
