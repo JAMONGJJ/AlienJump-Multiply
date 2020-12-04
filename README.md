@@ -35,6 +35,14 @@
 		if ((abs(posA.x - posB.x) < (wA + wB) * hardness) && (abs(posA.y - posB.y) < (hA + hB) * hardness))
 			return true;
 ###### 4. 충돌검사를 진행할 때 hardness 변수를 곱해 충돌검사 난이도 조절
+	
+	backgroundMove += ofGetLastFrameTime();
+	...
+	repeatingShader.setUniform1f("offset", backgroundMove);
+	obstacleShader.setUniform1f("translation", obstacleMove[i]);
+	...
+	fragUV = vec2(uv.x, 1.0 - uv.y) + vec2(offset / 2, 0.0);
+###### 5. 버텍스 셰이더의 "offset", "translation" 변수로 이전 프레임으로부터 흐른 시간(ofGetLastFrameTIme())을 전달해 배경과 장애물이 일정하게 움직이게끔 함 
 
 -----------------------
 ![Intro](https://user-images.githubusercontent.com/75113789/101166611-ea9d8080-367b-11eb-8729-832c76d916e7.PNG)
