@@ -1,6 +1,6 @@
 # AlienJump-Multiply
 
-#### 사용언어 및 툴 : C++, GLSL, openGL, openframeworks
+#### 사용언어 및 툴 : C++, GLSL, openGL(v4.1), openframeworks(v0.10.0_vs2017_release)
 #### 작업 인원 : 1인 프로젝트
 
 -----------------------
@@ -32,3 +32,6 @@
 ![Stage4](https://user-images.githubusercontent.com/75113789/101171668-72d35400-3683-11eb-95b6-9a9e6738817f.PNG)
 > ###### 스테이지 4 화면
 > ###### 숫자키 1 ~ 8로 점프
+
+# < 실행 방법 >
+#### bin\Multiply.exe 실행
