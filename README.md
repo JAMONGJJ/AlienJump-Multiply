@@ -28,8 +28,7 @@
 		modelArray[3][7] = buildMatrix(vec3(0.5, -0.75, 0.0), 0.0, vec3(0.5, 0.25, 1.0));
 ###### 3. 스테이지에 따라 셰이더로 4차원 행렬값을 전달해 화면에 이미지가 렌더링 될 크기 및 위치를 변경
 
-		if ((abs(posA.x - posB.x) < (wA + wB) * hardness) &&
-		(abs(posA.y - posB.y) < (hA + hB) * hardness))
+		if ((abs(posA.x - posB.x) < (wA + wB) * hardness) && (abs(posA.y - posB.y) < (hA + hB) * hardness))
 			return true;
 ###### 4. 충돌검사를 진행할 때 hardness 변수를 곱해 충돌검사 난이도 조절
 
