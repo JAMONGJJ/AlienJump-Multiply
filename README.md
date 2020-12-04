@@ -26,6 +26,9 @@
 		modelArray[3][5] = buildMatrix(vec3(0.5, -0.25, 0.0), 0.0, vec3(0.5, 0.25, 1.0));
 		modelArray[3][6] = buildMatrix(vec3(-0.5, -0.75, 0.0), 0.0, vec3(0.5, 0.25, 1.0));
 		modelArray[3][7] = buildMatrix(vec3(0.5, -0.75, 0.0), 0.0, vec3(0.5, 0.25, 1.0));
+		...
+		
+		obstacleShader.setUniformMatrix4f("model", modelArray[stage - 1][i]);
 ###### 3. 스테이지에 따라 셰이더로 4차원 행렬값을 전달해 화면에 이미지가 렌더링 될 크기 및 위치를 변경
 
 		if ((abs(posA.x - posB.x) < (wA + wB) * hardness) && (abs(posA.y - posB.y) < (hA + hB) * hardness))
