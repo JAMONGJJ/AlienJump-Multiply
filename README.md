@@ -30,7 +30,7 @@
 
 		if ((abs(posA.x - posB.x) < (wA + wB) * hardness) &&
 		(abs(posA.y - posB.y) < (hA + hB) * hardness))
-		return true;
+			return true;
 ###### 4. 충돌검사를 진행할 때 hardness 변수를 곱해 충돌검사 난이도 조절
 
 -----------------------
