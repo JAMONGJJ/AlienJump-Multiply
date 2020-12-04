@@ -13,3 +13,17 @@
 > ###### 클라이언트를 실행하면 나타나는 초기화면
 
 -----------------------
+![Stage1](https://user-images.githubusercontent.com/75113789/101171663-71099080-3683-11eb-96a5-897738385702.PNG)
+> ###### 스테이지 1 화면
+
+-----------------------
+![Stage2](https://user-images.githubusercontent.com/75113789/101171666-723abd80-3683-11eb-8e58-03c51d64abfc.PNG)
+> ###### 스테이지 2 화면
+
+-----------------------
+![Stage3](https://user-images.githubusercontent.com/75113789/101171667-723abd80-3683-11eb-9e45-c9a00dbf384f.PNG)
+> ###### 스테이지 3 화면
+
+-----------------------
+![Stage4](https://user-images.githubusercontent.com/75113789/101171668-72d35400-3683-11eb-95b6-9a9e6738817f.PNG)
+> ###### 스테이지 4 화면
