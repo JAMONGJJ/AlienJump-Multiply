@@ -57,31 +57,31 @@
 	}
 	
 ###### * draw() : 실질적으로 메쉬들을 렌더링(셰이더에 필요한 유니폼 변수를 전달하고, 메쉬 드로우)
-		//
-		obstacleShader.begin();
-		obstacleShader.setUniformTexture("Texture", obstacleImg, 0);
-		obstacleShader.setUniform1f("translation", obstacleMove[i]);
-		obstacleShader.setUniformMatrix4f("model", modelArray[stage - 1][i]);
-		obstacleMesh[i].draw();
-		obstacleShader.end();
+	//
+	obstacleShader.begin();
+	obstacleShader.setUniformTexture("Texture", obstacleImg, 0);
+	obstacleShader.setUniform1f("translation", obstacleMove[i]);
+	obstacleShader.setUniformMatrix4f("model", modelArray[stage - 1][i]);
+	obstacleMesh[i].draw();
+	obstacleShader.end();
 
-		//
-		spritesheetShader.begin();
-		spritesheetShader.setUniform2f("size", spriteSize);
-		spritesheetShader.setUniform2f("offset", spriteFrame);
-		spritesheetShader.setUniform3f("translation", charJumpPos[i]);
-		spritesheetShader.setUniformTexture("Texture", alienImg, 0);
-		repeatingShader.setUniformMatrix4f("model", modelArray[stage - 1][i]);
-		charMesh[i].draw();
-		spritesheetShader.end();
+	//
+	spritesheetShader.begin();
+	spritesheetShader.setUniform2f("size", spriteSize);
+	spritesheetShader.setUniform2f("offset", spriteFrame);
+	spritesheetShader.setUniform3f("translation", charJumpPos[i]);
+	spritesheetShader.setUniformTexture("Texture", alienImg, 0);
+	repeatingShader.setUniformMatrix4f("model", modelArray[stage - 1][i]);
+	charMesh[i].draw();
+	spritesheetShader.end();
 
-		//
-		repeatingShader.begin();
-		repeatingShader.setUniform1f("offset", backgroundMove);
-		repeatingShader.setUniformTexture("Texture", backgroundImg, 0);
-		repeatingShader.setUniformMatrix4f("model", modelArray[stage - 1][i]);
-		backgroundMesh.draw();
-		repeatingShader.end();
+	//
+	repeatingShader.begin();
+	repeatingShader.setUniform1f("offset", backgroundMove);
+	repeatingShader.setUniformTexture("Texture", backgroundImg, 0);
+	repeatingShader.setUniformMatrix4f("model", modelArray[stage - 1][i]);
+	backgroundMesh.draw();
+	repeatingShader.end();
 		
 ###### * buildPreset(..) : 스테이지에 따라 셰이더로 4차원 행렬값을 전달해 화면에 이미지가 렌더링 될 크기 및 위치를 변경
   	modelArray[0][0] = buildMatrix(vec3(0.0, 0.0, 0.0), 0.0, vec3(1.0, 1.0, 1.0));
