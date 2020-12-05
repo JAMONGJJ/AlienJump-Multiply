@@ -9,8 +9,8 @@
 
 -----------------------
 # < 작업 내용 >
-###### 1. 클라이언트 코드 및 바인드 할 버텍스 셰이더, 프래그먼트 셰이더들을 C++, GLSL로 작성
-###### 2. 스테이지가 하나씩 올라갈 때마다 렌더링되는 이미지들이 2배로 증가
+###### * 클라이언트 코드 및 바인드 할 버텍스 셰이더, 프래그먼트 셰이더들을 C++, GLSL로 작성
+###### * 스테이지가 하나씩 올라갈 때마다 렌더링되는 이미지들이 2배로 증가
 
   	modelArray[0][0] = buildMatrix(vec3(0.0, 0.0, 0.0), 0.0, vec3(1.0, 1.0, 1.0));
 
@@ -34,11 +34,11 @@
 		
 	obstacleShader.setUniformMatrix4f("model", modelArray[stage - 1][i]);
 	repeatingShader.setUniformMatrix4f("model", modelArray[stage - 1][i]);
-###### 3. 스테이지에 따라 셰이더로 4차원 행렬값을 전달해 화면에 이미지가 렌더링 될 크기 및 위치를 변경
+###### * 스테이지에 따라 셰이더로 4차원 행렬값을 전달해 화면에 이미지가 렌더링 될 크기 및 위치를 변경
 
 	if ((abs(posA.x - posB.x) < (wA + wB) * hardness) && (abs(posA.y - posB.y) < (hA + hB) * hardness))
 		return true;
-###### 4. 충돌검사를 진행할 때 hardness 변수를 곱해 충돌검사 난이도 조절
+###### * 충돌검사를 진행할 때 hardness 변수를 곱해 충돌검사 난이도 조절
 	
 	backgroundMove += ofGetLastFrameTime();
 	...
@@ -46,7 +46,7 @@
 	obstacleShader.setUniform1f("translation", obstacleMove[i]);
 	...
 	fragUV = vec2(uv.x, 1.0 - uv.y) + vec2(offset / 2, 0.0);
-###### 5. 버텍스 셰이더의 "offset", "translation" 변수로 이전 프레임으로부터 흐른 시간(ofGetLastFrameTIme())을 전달해 배경과 장애물이 일정하게 움직이게끔 함 
+###### * 버텍스 셰이더의 "offset", "translation" 변수로 이전 프레임으로부터 흐른 시간(ofGetLastFrameTIme())을 전달해 배경과 장애물이 일정하게 움직이게끔 함 
 
 -----------------------
 ![Intro](https://user-images.githubusercontent.com/75113789/101166611-ea9d8080-367b-11eb-8729-832c76d916e7.PNG)
