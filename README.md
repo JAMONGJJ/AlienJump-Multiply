@@ -1,4 +1,5 @@
 # AlienJump-Multiply
+> ## 숫자키로 점프해 장애물을 넘는 게임
 
 #### 사용언어 및 툴 : C++, GLSL, openGL(v4.1), openframeworks(v0.10.0_vs2017_release)
 #### 작업 인원 : 1인 프로젝트
